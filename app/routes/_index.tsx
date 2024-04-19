@@ -7,6 +7,7 @@ import {
 } from "@tabler/icons-react";
 import { useHover } from "@mantine/hooks";
 import me from "/images/gab.png";
+import Title from "~/routes/components/Title";
 
 export const meta: MetaFunction = () => {
   return [
@@ -40,20 +41,7 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <Flex gap="xl" justify="center" align="center" direction="column">
-        <h1
-          style={{
-            fontSize: "3rem",
-            marginBottom: 0,
-            backgroundImage:
-              "linear-gradient(to right, rgb(249, 168, 212), rgb(216, 180, 254), rgb(129, 140, 248))",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            fontWeight: 700,
-          }}
-        >
-          gab
-        </h1>
-
+        <Title title={"gab"} />
         <Image src={me} alt="gab" w={200} />
 
         {buttons.map(({ label, icon, color, link }, id) => {
