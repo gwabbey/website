@@ -1,7 +1,8 @@
-import { Box, Burger, Drawer, Group, Stack } from "@mantine/core";
+import { Box, Burger, Container, Drawer, Group, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.css";
 import { Link } from "@remix-run/react";
+import Title from "~/routes/components/Title";
 
 const pages = [
   {
@@ -38,9 +39,11 @@ export function Header() {
             </div>
           ))}
         </Group>
-        <Group h="100%" justify={"end"}>
+        <Group h="100%" justify={"space-between"}>
+          <Box component="div" hiddenFrom={"sm"}>
+            <Title title={"gab"} />
+          </Box>
           <Burger
-            style={{ zIndex: 20 }}
             opened={drawerOpened}
             onClick={toggleDrawer}
             hiddenFrom="sm"
@@ -48,31 +51,38 @@ export function Header() {
         </Group>
       </header>
 
-      <Drawer
+      <Drawer.Root
         opened={drawerOpened}
         onClose={closeDrawer}
-        withCloseButton={false}
+        withinPortal={false}
         size="100%"
         padding="xl"
         hiddenFrom="sm"
         position="bottom"
-        overlayProps={{ backgroundOpacity: 0 }}
-        zIndex={10}
       >
-        <Stack align="center" justify="center" gap="xl" h="calc(100vh - 120px)">
-          {pages.map((page) => (
-            <div key={page.title}>
-              <Link
-                to={page.link}
-                className={classes.link}
-                onClick={closeDrawer}
-              >
-                {page.title}
-              </Link>
-            </div>
-          ))}
-        </Stack>
-      </Drawer>
+        <Drawer.Overlay opacity={0} />
+        <Drawer.Content>
+          <Stack
+            align="center"
+            justify="center"
+            gap="xl"
+            h="100vh"
+            style={{ backgroundColor: "#FFF5F9" }}
+          >
+            {pages.map((page) => (
+              <div key={page.title}>
+                <Link
+                  to={page.link}
+                  className={classes.link}
+                  onClick={closeDrawer}
+                >
+                  {page.title}
+                </Link>
+              </div>
+            ))}
+          </Stack>
+        </Drawer.Content>
+      </Drawer.Root>
     </Box>
   );
 }

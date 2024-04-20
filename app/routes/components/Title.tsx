@@ -9,6 +9,7 @@ export default function Title({ title }: { title: string }) {
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         fontWeight: 700,
+        marginTop: 0,
       }}
     >
       {title}

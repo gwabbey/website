@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Button, Flex, Image } from "@mantine/core";
+import { Button, Flex, Image, Text } from "@mantine/core";
 import {
   IconBrandBandcamp,
   IconBrandSpotify,
@@ -40,10 +40,15 @@ const buttons = [
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <Flex gap="xl" justify="center" align="center" direction="column">
-        <Title title={"gab"} />
+      <Flex justify="center" align="center" direction="column">
         <Image src={me} alt="gab" w={200} />
+        <Title title={"gab"} />
+        <Text size="xl" p={16}>
+          musician and developer
+        </Text>
+      </Flex>
 
+      <Flex gap="xl" justify="center" align="center" direction="column">
         {buttons.map(({ label, icon, color, link }, id) => {
           const { hovered, ref } = useHover();
           return (

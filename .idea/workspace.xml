@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="038a04f8-8198-4f23-987d-2369f370f97f" name="Changes" comment="feat(components): add title component and improve home and music pages">
-      <change afterPath="$PROJECT_DIR$/app/routes/components/Title.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/_index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/_index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/components/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/components/Header.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/music.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/music.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/components/Title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/components/Title.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +120,7 @@
       <workItem from="1702142785757" duration="46000" />
       <workItem from="1713344442274" duration="645000" />
       <workItem from="1713345097107" duration="599000" />
-      <workItem from="1713347214325" duration="24610000" />
+      <workItem from="1713347214325" duration="33009000" />
     </task>
     <task id="LOCAL-00001" summary="new&#10;&#10;feat(routes): add a new redirect route&#10;feat(routes): add a new home page with a hero section and links to social media&#10;feat(components): add a header component with a hamburger menu&#10;feat(routes): add a new music page&#10;feat(packages): add new dependencies for mantine, tabler icons, and postcss&#10;feat(config): add postcss configuration&#10;chore(docs): update the readme with new project details&#10;chore(assets): add new favicon and profile image">
       <option name="closed" value="true" />
@@ -130,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713564874156</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat(components): add title component and improve home and music pages">
+      <option name="closed" value="true" />
+      <created>1713567249981</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713567249981</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
