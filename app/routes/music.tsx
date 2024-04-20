@@ -1,7 +1,39 @@
 import { json } from "@remix-run/node";
 import Title from "~/routes/components/Title";
 import { useLoaderData } from "@remix-run/react";
-import { Flex, Text } from "@mantine/core";
+import { ActionIcon, Flex, Group, Text } from "@mantine/core";
+import {
+  IconBrandBandcamp,
+  IconBrandSpotify,
+  IconBrandYoutube,
+} from "@tabler/icons-react";
+
+const buttons = [
+  {
+    label: "Spotify",
+    icon: (
+      <IconBrandSpotify style={{ width: "75%", height: "75%" }} stroke={1.5} />
+    ),
+    color: "green",
+    link: "https://open.spotify.com/artist/038iYWhZBwm1mubQW0U5hB",
+  },
+  {
+    label: "YouTube",
+    icon: (
+      <IconBrandYoutube style={{ width: "75%", height: "75%" }} stroke={1.5} />
+    ),
+    color: "red",
+    link: "https://www.youtube.com/channel/UCCclrfXfNMQKoPS_mXQSnNg",
+  },
+  {
+    label: "Bandcamp",
+    icon: (
+      <IconBrandBandcamp style={{ width: "75%", height: "75%" }} stroke={1.5} />
+    ),
+    color: "blue",
+    link: "https://gwabbey.bandcamp.com",
+  },
+];
 
 export const loader = async () => {
   const spotifyApiUrl =
@@ -31,19 +63,16 @@ export const loader = async () => {
       },
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
     const data = await response.json();
-    data.items.sort((a: any, b: any) =>
-      a.release_date < b.release_date ? 1 : -1
+    data.items.sort(
+      (a: { release_date: number }, b: { release_date: number }) =>
+        a.release_date < b.release_date ? 1 : -1
     );
 
     return json(data);
   } catch (error) {
-    console.error("Error fetching data from Spotify API:", error);
-    throw new Error("Unable to fetch data from Spotify API");
+    console.error(error);
+    return json({ items: [] });
   }
 };
 
@@ -54,16 +83,62 @@ export default function Music() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <Flex gap="md" justify="center" align="center" direction="column">
         <Title title={"music"} />
-        <Text size={"xl"}>my latest release</Text>
-        <iframe
-          style={{ borderRadius: 10, border: "none" }}
-          src={"https://open.spotify.com/embed/album/" + data.items[0].id}
-          width="75%"
-          height="352"
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        />
+        <div style={{ width: "100%", maxWidth: 800, textAlign: "center" }}>
+          <Text size={"xl"}>my latest release</Text>
+          <iframe
+            title="my latest release"
+            style={{
+              borderRadius: 10,
+              border: "none",
+              maxWidth: 800,
+              minHeight: 400,
+              padding: 16,
+            }}
+            src={"https://open.spotify.com/embed/album/" + data.items[0].id}
+            width="100%"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </div>
+        <div style={{ width: "100%", maxWidth: 800, textAlign: "center" }}>
+          <Text size={"xl"}>more music</Text>
+          <iframe
+            title="more music"
+            style={{
+              borderRadius: 10,
+              border: "none",
+              maxWidth: 800,
+              minHeight: 600,
+              padding: 16,
+            }}
+            src={"https://open.spotify.com/embed/artist/038iYWhZBwm1mubQW0U5hB"}
+            width="100%"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </div>
+        <div style={{ width: "100%", maxWidth: 800, textAlign: "center" }}>
+          <Group justify="center" gap="xl" pb={32}>
+            {buttons.map(({ label, icon, link }, id) => {
+              return (
+                <ActionIcon
+                  key={id}
+                  component="a"
+                  href={link}
+                  target="_blank"
+                  size="xl"
+                  radius="xl"
+                  variant="outline"
+                  aria-label={label}
+                >
+                  {icon}
+                </ActionIcon>
+              );
+            })}
+          </Group>
+        </div>
       </Flex>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Box, Burger, Container, Drawer, Group, Stack } from "@mantine/core";
+import { Box, Burger, Drawer, Group, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.css";
 import { Link } from "@remix-run/react";
@@ -39,8 +39,8 @@ export function Header() {
             </div>
           ))}
         </Group>
-        <Group h="100%" justify={"space-between"}>
-          <Box component="div" hiddenFrom={"sm"}>
+        <Group h="100%" justify={"space-between"} hiddenFrom={"sm"}>
+          <Box component="div">
             <Title title={"gab"} />
           </Box>
           <Burger
