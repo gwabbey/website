@@ -6,7 +6,7 @@ import {
   IconBrandYoutube,
 } from "@tabler/icons-react";
 import { useHover } from "@mantine/hooks";
-import me from "/images/gab.png";
+import gab from "/images/gab.webp";
 import Title from "~/routes/components/Title";
 
 export const meta: MetaFunction = () => {
@@ -41,7 +41,7 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <Flex justify="center" align="center" direction="column">
-        <Image src={me} alt="gab" w={200} />
+        <Image src={gab} alt="gab" w={200} />
         <Title title={"gab"} />
         <Text size="xl" p={16}>
           musician and developer
