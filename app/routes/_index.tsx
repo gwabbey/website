@@ -44,7 +44,7 @@ export default function Index() {
         <Image src={gab} alt="gab" w={200} />
         <Title title={"gab"} />
         <Text size="xl" p={16}>
-          musician and developer
+          ✨ musician and developer ✨
         </Text>
       </Flex>
 
