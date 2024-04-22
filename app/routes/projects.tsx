@@ -44,8 +44,8 @@ export default function Projects() {
               <Box
                 p={16}
                 key={id}
+                miw={{ base: "100%", sm: 500 }}
                 style={{
-                  maxWidth: 500,
                   textAlign: "center",
                   display: "inline-block",
                 }}
