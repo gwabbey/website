@@ -83,7 +83,7 @@ export default function Music() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <Flex gap="md" justify="center" align="center" direction="column">
         <Title title={"music"} />
-        <div style={{ width: "100%", maxWidth: 800, textAlign: "center" }}>
+        <div style={{ width: "100%", textAlign: "center" }}>
           <Text size={"xl"}>my latest release</Text>
           <iframe
             title="my latest release"

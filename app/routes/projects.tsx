@@ -1,5 +1,5 @@
 import Title from "~/routes/components/Title";
-import { Flex, Grid, Text } from "@mantine/core";
+import { Box, Center, Flex, Group, Text } from "@mantine/core";
 import Project from "~/routes/components/Project";
 
 const items = [
@@ -38,17 +38,23 @@ export default function Projects() {
       <Flex gap="md" justify="center" align="center" direction="column">
         <Title title={"projects"} />
         <Text size={"xl"}>some of my projects</Text>
-        <Grid justify="center" align="stretch" gutter="lg">
-          {items.map((item, id) => (
-            <Grid.Col
-              key={id}
-              style={{ maxWidth: 500, textAlign: "center" }}
-              span={{ base: 12, sm: 6 }}
-            >
-              <Project item={item} />
-            </Grid.Col>
-          ))}
-        </Grid>
+        <Center>
+          <Group justify="center" grow>
+            {items.map((item, id) => (
+              <Box
+                p={16}
+                key={id}
+                style={{
+                  maxWidth: 500,
+                  textAlign: "center",
+                  display: "inline-block",
+                }}
+              >
+                <Project item={item} />
+              </Box>
+            ))}
+          </Group>
+        </Center>
       </Flex>
     </div>
   );
