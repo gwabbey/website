@@ -23,6 +23,13 @@ const items = [
     image: "/images/pink.webp",
     url: "g3b.dev",
   },
+  {
+    title: "Private or school projects",
+    description:
+      "Most of my projects are private or school projects. You can find some of them on my GitHub profile.",
+    image: "/images/github.webp",
+    url: "github.com/gwabbey",
+  },
 ];
 
 export default function Projects() {

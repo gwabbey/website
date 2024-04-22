@@ -41,7 +41,7 @@ export default function Project({ item }: { item: ItemProps }) {
             transform: "translateX(-50%)",
           }}
           component={"a"}
-          href={item.url}
+          href={`https://${item.url}`}
           target="_blank"
           size="md"
           radius="xl"
