@@ -18,7 +18,7 @@ const items = [
     url: "stivor.net",
   },
   {
-    title: "gab's website 🎀",
+    title: "my website 🎀",
     description: "My personal website, built with Remix and Mantine.",
     image: "/images/pink.webp",
     url: "g3b.dev",
