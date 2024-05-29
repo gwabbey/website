@@ -61,6 +61,7 @@ export const loader = async () => {
   });
 
   const data = await response.json();
+
   data.items.sort((a: { release_date: number }, b: { release_date: number }) =>
     a.release_date < b.release_date ? 1 : -1
   );
@@ -97,9 +98,6 @@ export default function Music() {
                   allowFullScreen
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
-                  onLoad={() => {
-                    console.log("loaded");
-                  }}
                 />
               </div>
               <div
