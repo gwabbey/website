@@ -68,11 +68,12 @@ export default function Index() {
           const { hovered, ref } = useHover();
           return (
             <div
-              key={id}
               ref={ref}
+              key={id}
               style={{
                 width: isMobile ? "100%" : 300,
                 paddingInline: isMobile ? "24px" : "0px",
+                borderRadius: "9999px",
               }}
             >
               <Button

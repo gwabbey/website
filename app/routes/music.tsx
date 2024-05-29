@@ -1,40 +1,8 @@
 import { json } from "@remix-run/node";
 import Title from "~/routes/components/Title";
 import { Await, useLoaderData } from "@remix-run/react";
-import { ActionIcon, Flex, Group, Text } from "@mantine/core";
-import {
-  IconBrandBandcamp,
-  IconBrandSpotify,
-  IconBrandYoutube,
-} from "@tabler/icons-react";
+import { Flex, Text } from "@mantine/core";
 import { Suspense } from "react";
-
-const buttons = [
-  {
-    label: "Spotify",
-    icon: (
-      <IconBrandSpotify style={{ width: "75%", height: "75%" }} stroke={1.5} />
-    ),
-    color: "green",
-    link: "https://open.spotify.com/artist/038iYWhZBwm1mubQW0U5hB",
-  },
-  {
-    label: "YouTube",
-    icon: (
-      <IconBrandYoutube style={{ width: "75%", height: "75%" }} stroke={1.5} />
-    ),
-    color: "red",
-    link: "https://www.youtube.com/channel/UCCclrfXfNMQKoPS_mXQSnNg",
-  },
-  {
-    label: "Bandcamp",
-    icon: (
-      <IconBrandBandcamp style={{ width: "75%", height: "75%" }} stroke={1.5} />
-    ),
-    color: "blue",
-    link: "https://gwabbey.bandcamp.com",
-  },
-];
 
 export const loader = async () => {
   const spotifyApiUrl =
@@ -121,28 +89,6 @@ export default function Music() {
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 />
-              </div>
-              <div
-                style={{ width: "100%", maxWidth: 800, textAlign: "center" }}
-              >
-                <Group justify="center" gap="xl" pb={32}>
-                  {buttons.map(({ label, icon, link }, id) => {
-                    return (
-                      <ActionIcon
-                        key={id}
-                        component="a"
-                        href={link}
-                        target="_blank"
-                        size="xl"
-                        radius="xl"
-                        variant="outline"
-                        aria-label={label}
-                      >
-                        {icon}
-                      </ActionIcon>
-                    );
-                  })}
-                </Group>
               </div>
             </Flex>
           )}
