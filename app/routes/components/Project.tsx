@@ -5,7 +5,7 @@ interface ItemProps {
   title: string;
   description: string;
   image: string;
-  url: string | undefined;
+  url: string;
 }
 
 export default function Project({ item }: { item: ItemProps }) {
