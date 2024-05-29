@@ -34,7 +34,7 @@ const items = [
 
 export default function Projects() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+    <div style={{ lineHeight: "1.8" }}>
       <Flex gap="md" justify="center" align="center" direction="column">
         <Title title={"projects"} />
         <Text size={"xl"}>some of my projects</Text>

@@ -80,7 +80,7 @@ export default function Music() {
   const data = useLoaderData() as { items: { id: string }[] };
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+    <div style={{ lineHeight: "1.8" }}>
       <Flex gap="md" justify="center" align="center" direction="column">
         <Title title={"music"} />
         <div style={{ width: "100%", textAlign: "center" }}>

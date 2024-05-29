@@ -26,6 +26,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body
         style={{
           backgroundColor: "#FFF5F9",
+          fontFamily: "system-ui, sans-serif",
         }}
       >
         <MantineProvider

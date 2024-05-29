@@ -2,10 +2,11 @@ import type { MetaFunction } from "@remix-run/node";
 import { Button, Flex, Image, Text } from "@mantine/core";
 import {
   IconBrandBandcamp,
+  IconBrandGithub,
   IconBrandSpotify,
   IconBrandYoutube,
 } from "@tabler/icons-react";
-import { useHover } from "@mantine/hooks";
+import { useHover, useMediaQuery } from "@mantine/hooks";
 import gab from "/images/gab.webp";
 import Title from "~/routes/components/Title";
 
@@ -35,11 +36,18 @@ const buttons = [
     color: "blue",
     link: "https://gwabbey.bandcamp.com",
   },
+  {
+    label: "Github",
+    icon: <IconBrandGithub size={32} />,
+    color: "gray",
+    link: "https://gwabbey.bandcamp.com",
+  },
 ];
 
 export default function Index() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+    <div style={{ lineHeight: "1.8" }}>
       <Flex justify="center" align="center" direction="column">
         <Image src={gab} alt="gab" w={200} />
         <Title title={"gab"} />
@@ -52,8 +60,16 @@ export default function Index() {
         {buttons.map(({ label, icon, color, link }, id) => {
           const { hovered, ref } = useHover();
           return (
-            <div key={id} ref={ref}>
+            <div
+              key={id}
+              ref={ref}
+              style={{
+                width: isMobile ? "100%" : 300,
+                paddingInline: isMobile ? "24px" : "0px",
+              }}
+            >
               <Button
+                fullWidth
                 component="a"
                 href={link}
                 target="_blank"
@@ -64,9 +80,11 @@ export default function Index() {
                 color={color}
                 radius="xl"
                 style={{
-                  transition: "all 0.2s ease",
-                  backgroundImage:
-                    "linear-gradient(128deg, #FFF5F9 0%, #F5B9BD 75%)",
+                  transition: "all 0.5s ease",
+                  backgroundImage: `linear-gradient(128deg, #FFF5F9 0%, #FFF5F9 100%)`,
+                  boxShadow: hovered
+                    ? `0 0 20px 10px var(--mantine-color-${color}-light)`
+                    : "none",
                 }}
               >
                 {label}
