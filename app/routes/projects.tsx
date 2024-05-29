@@ -11,6 +11,13 @@ const items = [
     url: "gestione.moveautomation.it",
   },
   {
+    title: "GraceJS",
+    description:
+      "A TypeScript framework that simplifies the process of creating scalable web services.",
+    image: "/images/stivor.webp",
+    url: "docs.gracejs.dev",
+  },
+  {
     title: "Stivor ETS",
     description:
       "A website for a non-profit organization of Italians in Bosnia.",
@@ -21,7 +28,7 @@ const items = [
     title: "my website 🎀",
     description: "My personal website, built with Remix and Mantine.",
     image: "/images/pink.webp",
-    url: "g3b.dev",
+    url: "",
   },
   {
     title: "Private or school projects",
@@ -37,7 +44,7 @@ export default function Projects() {
     <div style={{ lineHeight: "1.8" }}>
       <Flex gap="md" justify="center" align="center" direction="column">
         <Title title={"projects"} />
-        <Text size={"xl"}>some of my projects</Text>
+        <Text size={"xl"}>some projects i worked on</Text>
         <Center>
           <Group justify="center" grow>
             {items.map((item, id) => (

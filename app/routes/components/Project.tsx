@@ -5,7 +5,7 @@ interface ItemProps {
   title: string;
   description: string;
   image: string;
-  url: string;
+  url: string | undefined;
 }
 
 export default function Project({ item }: { item: ItemProps }) {
@@ -29,25 +29,27 @@ export default function Project({ item }: { item: ItemProps }) {
           {item.description}
         </Text>
       </Card.Section>
-      <Box p={16}>
-        <Button
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 16,
-            transform: "translateX(-50%)",
-            transition: "all 0.5s ease",
-          }}
-          component={"a"}
-          href={`https://${item.url}`}
-          target="_blank"
-          size="md"
-          radius="xl"
-          w={"50%"}
-        >
-          Visit
-        </Button>
-      </Box>
+      {item.url && (
+        <Box p={16}>
+          <Button
+            style={{
+              position: "absolute",
+              left: "50%",
+              bottom: 16,
+              transform: "translateX(-50%)",
+              transition: "all 0.5s ease",
+            }}
+            component={"a"}
+            href={`https://${item.url}`}
+            target="_blank"
+            size="md"
+            radius="xl"
+            w={"50%"}
+          >
+            Visit
+          </Button>
+        </Box>
+      )}
     </Card>
   );
 }
