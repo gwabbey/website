@@ -71,7 +71,6 @@ export const loader = async () => {
 
     return json(data);
   } catch (error) {
-    console.error(error);
     return json({ items: [] });
   }
 };

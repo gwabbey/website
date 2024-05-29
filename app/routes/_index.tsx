@@ -1,9 +1,10 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Button, Flex, Image, Text } from "@mantine/core";
 import {
-  IconBrandBandcamp,
   IconBrandGithub,
+  IconBrandSoundcloud,
   IconBrandSpotify,
+  IconBrandTwitter,
   IconBrandYoutube,
 } from "@tabler/icons-react";
 import { useHover, useMediaQuery } from "@mantine/hooks";
@@ -19,28 +20,34 @@ export const meta: MetaFunction = () => {
 
 const buttons = [
   {
-    label: "Spotify",
+    label: "spotify",
     icon: <IconBrandSpotify size={32} />,
     color: "green",
     link: "https://open.spotify.com/artist/038iYWhZBwm1mubQW0U5hB",
   },
   {
-    label: "YouTube",
+    label: "youtube",
     icon: <IconBrandYoutube size={32} />,
     color: "red",
-    link: "https://www.youtube.com/channel/UCCclrfXfNMQKoPS_mXQSnNg",
+    link: "https://youtube.com/channel/UCCclrfXfNMQKoPS_mXQSnNg",
   },
   {
-    label: "Bandcamp",
-    icon: <IconBrandBandcamp size={32} />,
-    color: "blue",
-    link: "https://gwabbey.bandcamp.com",
+    label: "twitter",
+    icon: <IconBrandTwitter size={32} />,
+    color: "cyan",
+    link: "https://twitter.com/gwabbeyy",
   },
   {
-    label: "Github",
+    label: "soundcloud",
+    icon: <IconBrandSoundcloud size={32} />,
+    color: "orange",
+    link: "https://soundcloud.com/gwabbey",
+  },
+  {
+    label: "github",
     icon: <IconBrandGithub size={32} />,
     color: "gray",
-    link: "https://gwabbey.bandcamp.com",
+    link: "https://github.com/gwabbey",
   },
 ];
 

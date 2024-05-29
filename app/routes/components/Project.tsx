@@ -36,6 +36,7 @@ export default function Project({ item }: { item: ItemProps }) {
             left: "50%",
             bottom: 16,
             transform: "translateX(-50%)",
+            transition: "all 0.5s ease",
           }}
           component={"a"}
           href={`https://${item.url}`}
