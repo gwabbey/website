@@ -14,7 +14,7 @@ const items = [
     title: "GraceJS",
     description:
       "A TypeScript framework that simplifies the process of creating scalable web services.",
-    image: "/images/stivor.webp",
+    image: "/images/grace.webp",
     url: "docs.gracejs.dev",
   },
   {
