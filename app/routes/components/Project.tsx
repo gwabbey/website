@@ -29,27 +29,27 @@ export default function Project({ item }: { item: ItemProps }) {
           {item.description}
         </Text>
       </Card.Section>
-      {item.url && (
-        <Box p={16}>
-          <Button
-            style={{
-              position: "absolute",
-              left: "50%",
-              bottom: 16,
-              transform: "translateX(-50%)",
-              transition: "all 0.5s ease",
-            }}
-            component={"a"}
-            href={`https://${item.url}`}
-            target="_blank"
-            size="md"
-            radius="xl"
-            w={"50%"}
-          >
-            visit
-          </Button>
-        </Box>
-      )}
+      <Box p={16}>
+        <Button
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 16,
+            transform: "translateX(-50%)",
+            transition: "all 0.5s ease",
+            opacity: item.url ? 1 : 0.5,
+            pointerEvents: item.url ? "all" : "none",
+          }}
+          component={"a"}
+          href={`https://${item.url}`}
+          target="_blank"
+          size="md"
+          radius="xl"
+          w={"50%"}
+        >
+          {item.url ? "visit" : "coming soon"}
+        </Button>
+      </Box>
     </Card>
   );
 }

@@ -25,12 +25,6 @@ const items = [
     url: "stivor.net",
   },
   {
-    title: "my website 🎀",
-    description: "My personal website, built with Remix and Mantine.",
-    image: "/images/pink.webp",
-    url: "",
-  },
-  {
     title: "Private or school projects",
     description:
       "Most of my projects are private or school projects. You can find some of them on my GitHub profile.",
