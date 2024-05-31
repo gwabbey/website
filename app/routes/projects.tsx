@@ -6,7 +6,7 @@ const items = [
   {
     title: "Gestione Move",
     description:
-      "An ERP system for Move Automation Srl, a company that provides automation solutions for industrial plants.",
+      "An ERP system for Move Automation Srl, a company that provides automation solutions for industries.",
     image: "/images/move-automation.webp",
     url: "gestione.moveautomation.it",
   },

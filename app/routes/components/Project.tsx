@@ -46,7 +46,7 @@ export default function Project({ item }: { item: ItemProps }) {
             radius="xl"
             w={"50%"}
           >
-            Visit
+            visit
           </Button>
         </Box>
       )}
