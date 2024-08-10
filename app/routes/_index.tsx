@@ -63,7 +63,12 @@ export default function Index() {
         </Text>
       </Flex>
 
-      <Flex gap="xl" justify="center" align="center" direction="column">
+      <Flex
+        gap="xl"
+        justify="center"
+        align="center"
+        direction={isMobile ? "column" : "row"}
+      >
         {buttons.map(({ label, icon, color, link }, id) => {
           const { hovered, ref } = useHover();
           return (
@@ -71,19 +76,19 @@ export default function Index() {
               ref={ref}
               key={id}
               style={{
-                width: isMobile ? "100%" : 300,
+                width: isMobile ? "100%" : "auto",
                 paddingInline: isMobile ? "24px" : "0px",
                 borderRadius: "9999px",
               }}
             >
               <Button
-                fullWidth
+                fullWidth={isMobile}
                 component="a"
                 href={link}
                 target="_blank"
                 size="xl"
                 justify="center"
-                leftSection={icon}
+                leftSection={isMobile && icon}
                 variant={hovered ? "outline" : "default"}
                 color={color}
                 radius="xl"
@@ -95,7 +100,7 @@ export default function Index() {
                     : "none",
                 }}
               >
-                {label}
+                {isMobile ? label : icon}
               </Button>
             </div>
           );

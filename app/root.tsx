@@ -12,6 +12,7 @@ import {
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import React from "react";
 import { Header } from "~/routes/components/Header";
+import "./styles.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -24,8 +25,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ColorSchemeScript forceColorScheme={"light"} />
       </head>
       <body
+        className="background"
         style={{
-          backgroundColor: "#FFF5F9",
           fontFamily: "system-ui, sans-serif",
         }}
       >
