@@ -29,7 +29,7 @@ const buttons = [
     label: "youtube",
     icon: <IconBrandYoutube size={32} />,
     color: "red",
-    link: "https://youtube.com/channel/UCCclrfXfNMQKoPS_mXQSnNg",
+    link: "https://youtube.com/@g3b",
   },
   {
     label: "twitter",

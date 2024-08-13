@@ -1,7 +1,8 @@
 import { Box, Burger, Drawer, Group, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { Link, useNavigation } from "@remix-run/react";
+import { useEffect } from "react";
 import classes from "./Header.module.css";
-import { Link } from "@remix-run/react";
 import Title from "~/routes/components/Title";
 
 const pages = [
@@ -26,6 +27,15 @@ const pages = [
 export function Header() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
+
+  const transition = useNavigation();
+
+  useEffect(() => {
+    if (transition.state === "idle") {
+      console.log("idle");
+      closeDrawer();
+    }
+  }, [transition.state, closeDrawer]);
 
   return (
     <Box>
@@ -73,8 +83,8 @@ export function Header() {
               <div key={page.title}>
                 <Link
                   to={page.link}
+                  unstable_viewTransition
                   className={classes.link}
-                  onClick={closeDrawer}
                 >
                   {page.title}
                 </Link>
