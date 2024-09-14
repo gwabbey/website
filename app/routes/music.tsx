@@ -19,6 +19,10 @@ export const loader = async () => {
     body: "grant_type=client_credentials",
   });
 
+  if (!tokenResponse.ok) {
+    throw new Error(`Error: ${tokenResponse.status}`);
+  }
+
   const tokenData = await tokenResponse.json();
   const accessToken = tokenData.access_token;
 
@@ -28,9 +32,13 @@ export const loader = async () => {
     },
   });
 
+  if (!response.ok) {
+    throw new Error(`Error: ${response.status}`);
+  }
+
   const data = await response.json();
 
-  data.items.sort((a: { release_date: number }, b: { release_date: number }) =>
+  data.items.sort((a: { release_date: string }, b: { release_date: string }) =>
     a.release_date < b.release_date ? 1 : -1
   );
 
