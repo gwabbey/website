@@ -18,6 +18,12 @@ const items = [
     url: "docs.gracejs.dev",
   },
   {
+    title: "scuola.bar",
+    description: "An easier way to order food and drinks at school.",
+    image: "/images/scuolabar.webp",
+    url: "scuola.bar",
+  },
+  {
     title: "Stivor ETS",
     description:
       "A website for a non-profit organization of Italians in Bosnia.",
