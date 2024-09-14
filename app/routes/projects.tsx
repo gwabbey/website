@@ -31,9 +31,9 @@ const items = [
     url: "stivor.net",
   },
   {
-    title: "Private or school projects",
+    title: "Private and school projects",
     description:
-      "Most of my projects are private or school projects. You can find some of them on my GitHub profile.",
+      "I've done some projects for other companies or school purposes. You can find them on my GitHub profile.",
     image: "/images/github.webp",
     url: "github.com/gwabbey",
   },
