@@ -3,7 +3,7 @@ WORKDIR /usr/src/app
 
 FROM base AS deps
 COPY package.json bun.lockb ./
-RUN bun install --frozen-lockfile --production
+RUN bun install --frozen-lockfile
 
 FROM base AS builder
 COPY --from=deps /usr/src/app/node_modules ./node_modules
@@ -17,4 +17,4 @@ COPY package.json ./
 
 USER bun
 EXPOSE 3000/tcp
-CMD ["bun", "run", "build/index.js"]
+CMD ["bun", "run", "start"]
