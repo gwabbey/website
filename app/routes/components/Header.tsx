@@ -32,7 +32,6 @@ export function Header() {
 
   useEffect(() => {
     if (transition.state === "idle") {
-      console.log("idle");
       closeDrawer();
     }
   }, [transition.state, closeDrawer]);
