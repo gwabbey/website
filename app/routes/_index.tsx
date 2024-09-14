@@ -67,6 +67,7 @@ export default function Index() {
         gap="xl"
         justify="center"
         align="center"
+        py={16}
         direction={isMobile ? "column" : "row"}
       >
         {buttons.map(({ label, icon, color, link }, id) => {
