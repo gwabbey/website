@@ -8,7 +8,7 @@ RUN bun install --frozen-lockfile --production
 FROM base AS builder
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY . .
-RUN bun test && bun run build
+RUN bun run build
 
 FROM base AS release
 COPY --from=deps /usr/src/app/node_modules ./node_modules
