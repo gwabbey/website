@@ -42,6 +42,7 @@ export default function RootLayout({
                         flexDirection: "column",
                         minHeight: "100vh",
                         width: "100%",
+                        backgroundColor: "#FFF5F9",
                     }}
                 >
                     <Header />

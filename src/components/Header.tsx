@@ -30,7 +30,6 @@ export default function Header() {
             <header className={classes.header} style={{
                 backgroundColor: isMobile ? "transparent" : "#FFF5F9",
                 borderBottom: isMobile ? "none" : `${rem(1)} solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4))`,
-                position: isMobile ? "fixed" : "sticky",
             }}>
                 <Group h="100%" justify="center" gap={25} visibleFrom="sm">
                     {pages.map((page, index) => (<div key={index}>
@@ -67,6 +66,7 @@ export default function Header() {
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
+                            zIndex: 1000,
                         }}
                     />
                 </Group>
