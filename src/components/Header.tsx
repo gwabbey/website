@@ -1,6 +1,6 @@
 "use client";
-import {Box, Burger, Drawer, Group, Stack} from "@mantine/core";
-import {useDisclosure} from "@mantine/hooks";
+import {Box, Burger, Drawer, Group, rem, Stack} from "@mantine/core";
+import {useDisclosure, useMediaQuery} from "@mantine/hooks";
 import {motion} from "framer-motion";
 import classes from "./Header.module.css";
 import {Link} from 'next-view-transitions'
@@ -16,11 +16,22 @@ const pages = [{
 }];
 
 export default function Header() {
+    const isMobile = useMediaQuery("(max-width: 768px)");
     const [drawerOpened, {toggle: toggleDrawer, close: closeDrawer}] = useDisclosure(false);
 
     return (
-        <Box>
-            <header className={classes.header}>
+        <Box style={{
+            position: "sticky",
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 1000,
+        }}>
+            <header className={classes.header} style={{
+                backgroundColor: isMobile ? "transparent" : "#FFF5F9",
+                borderBottom: isMobile ? "none" : `${rem(1)} solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4))`,
+                position: isMobile ? "fixed" : "sticky",
+            }}>
                 <Group h="100%" justify="center" gap={25} visibleFrom="sm">
                     {pages.map((page, index) => (<div key={index}>
                         <motion.div
@@ -41,7 +52,22 @@ export default function Header() {
                     <Burger
                         opened={drawerOpened}
                         onClick={toggleDrawer}
+                        size="md"
                         hiddenFrom="sm"
+                        style={{
+                            outline: "none",
+                            border: "none",
+                            position: "absolute",
+                            top: "18px",
+                            right: "15px",
+                            width: "50px",
+                            height: "50px",
+                            borderRadius: "50%",
+                            backgroundColor: "pink",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
                     />
                 </Group>
             </header>

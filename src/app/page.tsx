@@ -1,11 +1,11 @@
-'use client'
 import {Flex, Text} from "@mantine/core";
 import {
     IconBrandGithub,
     IconBrandSoundcloud,
     IconBrandSpotify,
     IconBrandTwitter,
-    IconBrandYoutube, IconMail,
+    IconBrandYoutube,
+    IconMail,
 } from "@tabler/icons-react";
 import Links from "@/components/Links";
 import Title from "@/components/Title";
@@ -61,16 +61,21 @@ export default function Home() {
     return (
         <Transition>
             <Flex justify="center" align="center" direction="column">
-                <Image
-                    priority
-                    src="/gab.webp"
-                    alt="gab"
-                    width={200}
-                    height={200}
-                    style={{
-                        objectFit: "cover",
-                    }}
-                />
+                <div style={{
+                    paddingTop: 32,
+                    paddingBottom: 16,
+                }}>
+                    <Image
+                        priority
+                        src="/gab.webp"
+                        alt="gab"
+                        width={200}
+                        height={200}
+                        style={{
+                            objectFit: "cover",
+                        }}
+                    />
+                </div>
                 <Title title={"gab"} />
                 <Text size="xl" p={16}>
                     ✨ musician and developer ✨
