@@ -3,7 +3,7 @@ import {Box, Burger, Drawer, Group, Stack} from "@mantine/core";
 import {useDisclosure} from "@mantine/hooks";
 import {motion} from "framer-motion";
 import classes from "./Header.module.css";
-import Link from "next/link";
+import {Link} from 'next-view-transitions'
 
 const pages = [{
     title: "home", link: "/",
@@ -75,6 +75,7 @@ export default function Header() {
                             <Link
                                 href={page.link}
                                 className={classes.link}
+                                onClick={closeDrawer}
                             >
                                 {page.title}
                             </Link>

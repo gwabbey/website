@@ -3,6 +3,7 @@ import '@mantine/core/styles.css';
 import {ColorSchemeScript, createTheme, MantineProvider} from '@mantine/core';
 import {Inter} from 'next/font/google'
 import Header from "@/components/Header";
+import {ViewTransitions} from "next-view-transitions";
 
 const inter = Inter({
     subsets: ['latin'], display: 'swap',
@@ -24,39 +25,43 @@ export default function RootLayout({
                                    }: {
     children: React.ReactNode;
 }) {
-    return (<html lang="en" className={inter.className}>
-    <head>
-        <ColorSchemeScript forceColorScheme={"light"} />
-    </head>
-    <body>
-    <MantineProvider
-        forceColorScheme={"light"}
-        theme={theme}
-    >
-        <div
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                minHeight: "100vh",
-                width: "100%",
-            }}
-        >
-            <Header />
-            <div
-                style={{
-                    flex: 1,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "#FFF5F9",
-                }}
+    return (
+        <ViewTransitions>
+            <html lang="en" className={inter.className}>
+            <head>
+                <ColorSchemeScript forceColorScheme={"light"} />
+            </head>
+            <body>
+            <MantineProvider
+                forceColorScheme={"light"}
+                theme={theme}
             >
-                <div style={{width: "100%", height: "100%"}}>
-                    {children}
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        minHeight: "100vh",
+                        width: "100%",
+                    }}
+                >
+                    <Header />
+                    <div
+                        style={{
+                            flex: 1,
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            backgroundColor: "#FFF5F9",
+                        }}
+                    >
+                        <div style={{width: "100%", height: "100%"}}>
+                            {children}
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </MantineProvider>
-    </body>
-    </html>);
+            </MantineProvider>
+            </body>
+            </html>
+        </ViewTransitions>
+    );
 }
