@@ -12,7 +12,7 @@ RUN bun run build
 
 FROM base AS release
 COPY --from=deps /usr/src/app/node_modules ./node_modules
-COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /usr/src/app/.next/standalone ./
 COPY package.json ./
 
 USER bun
