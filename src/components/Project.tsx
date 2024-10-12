@@ -2,7 +2,7 @@
 import {Box, Button, Card, Text} from "@mantine/core";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {useHover} from "@mantine/hooks";
+import {useHover, useMediaQuery} from "@mantine/hooks";
 
 interface ItemProps {
     title: string;
@@ -24,6 +24,7 @@ const projectVariants = {
 };
 
 export default function Project({item, index}: { item: ItemProps; index: number }) {
+    const isMobile = useMediaQuery("(max-width: 768px)");
     const {hovered, ref} = useHover();
 
     return (
@@ -71,7 +72,7 @@ export default function Project({item, index}: { item: ItemProps; index: number 
                                 left: "50%",
                                 bottom: 16,
                                 transform: "translateX(-50%)",
-                                width: "50%",
+                                width: isMobile ? "90%" : "50%",
                             }}
                             initial={false}
                             animate={{
@@ -115,6 +116,7 @@ export default function Project({item, index}: { item: ItemProps; index: number 
                                 </motion.div>
                                 <div ref={ref}>
                                     <Button
+                                        fullWidth={isMobile}
                                         style={{
                                             width: "100%",
                                             transition: "all 0.5s ease",
