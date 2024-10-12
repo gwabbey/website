@@ -1,0 +1,13 @@
+networks:
+  web:
+    external: true
+
+services:
+  gab:
+    container_name: gab
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - web
