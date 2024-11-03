@@ -34,7 +34,7 @@ const items = [
     {
         title: "Private and school projects",
         description:
-            "I've done some projects for other companies or school purposes. You can find them on my GitHub profile.",
+            "I've worked on some projects for other companies or school purposes. You can find them on my GitHub profile.",
         image: "/github.webp",
         url: "github.com/gwabbey",
     },

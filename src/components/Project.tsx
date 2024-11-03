@@ -35,7 +35,7 @@ export default function Project({item, index}: { item: ItemProps; index: number 
             custom={index}
             style={{display: "inline-block", width: "100%"}}
             whileHover={{scale: 1.05}}
-            transition={{ease: "easeInOut", type: "spring"}}
+            transition={{ease: "easeInOut"}}
         >
             <Card
                 shadow="sm"

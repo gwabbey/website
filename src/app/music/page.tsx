@@ -13,7 +13,6 @@ export default function Music() {
                 }}
                 src={"https://open.spotify.com/embed/artist/038iYWhZBwm1mubQW0U5hB"}
                 width="100%"
-                allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
             />

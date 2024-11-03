@@ -3,7 +3,7 @@ import {
     IconBrandGithub,
     IconBrandSoundcloud,
     IconBrandSpotify,
-    IconBrandTwitter,
+    IconBrandX,
     IconBrandYoutube,
     IconMail,
 } from "@tabler/icons-react";
@@ -29,7 +29,7 @@ const buttons = [
     },
     {
         label: "twitter",
-        icon: <IconBrandTwitter size={32} />,
+        icon: <IconBrandX size={32} />,
         color: "cyan",
         link: "https://twitter.com/gwabbeyy",
         username: "gwabbeyy",
