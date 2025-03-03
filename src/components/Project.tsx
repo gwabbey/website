@@ -1,8 +1,8 @@
 "use client";
-import {Box, Button, Card, Text} from "@mantine/core";
+import { Box, Button, Card, Text } from "@mantine/core";
+import { useHover, useMediaQuery } from "@mantine/hooks";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import {motion} from "framer-motion";
-import {useHover, useMediaQuery} from "@mantine/hooks";
 
 interface ItemProps {
     title: string;
@@ -12,7 +12,7 @@ interface ItemProps {
 }
 
 const projectVariants = {
-    hidden: {opacity: 0, y: 20},
+    hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
         opacity: 1,
         y: 0,
@@ -23,9 +23,9 @@ const projectVariants = {
     }),
 };
 
-export default function Project({item, index}: { item: ItemProps; index: number }) {
+export default function Project({ item, index }: { item: ItemProps; index: number }) {
     const isMobile = useMediaQuery("(max-width: 768px)");
-    const {hovered, ref} = useHover();
+    const { hovered, ref } = useHover();
 
     return (
         <motion.div
@@ -33,15 +33,15 @@ export default function Project({item, index}: { item: ItemProps; index: number 
             initial="hidden"
             animate="visible"
             custom={index}
-            style={{display: "inline-block", width: "100%"}}
-            whileHover={{scale: 1.05}}
-            transition={{ease: "easeInOut"}}
+            style={{ display: "inline-block", width: "100%" }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ ease: "easeInOut" }}
         >
             <Card
                 shadow="sm"
                 padding="lg"
                 radius="md"
-                h={{base: "auto", sm: 300}}
+                h={{ base: "auto", sm: 300 }}
                 withBorder
             >
                 <Card.Section>
@@ -51,7 +51,7 @@ export default function Project({item, index}: { item: ItemProps; index: number 
                         alt={item.title}
                         height={100}
                         width={200}
-                        style={{width: "100%", objectFit: "cover"}}
+                        style={{ width: "100%", objectFit: "cover" }}
                     />
                 </Card.Section>
                 <Card.Section p={16}>
@@ -95,10 +95,10 @@ export default function Project({item, index}: { item: ItemProps; index: number 
                                     backgroundColor: "#FFF0F5",
                                     display: "flex",
                                     flexDirection: "column",
-                                    justifyContent: "flex-end",
+                                    justifyContent: "flex-end"
                                 }}
-                                initial={{height: 40}}
-                                animate={{height: hovered ? 80 : 40}}
+                                initial={{ height: 40 }}
+                                animate={{ height: hovered ? 80 : 40 }}
                                 transition={{
                                     type: "spring",
                                     stiffness: 500,
@@ -106,15 +106,19 @@ export default function Project({item, index}: { item: ItemProps; index: number 
                                 }}
                             >
                                 <motion.div
-                                    initial={{opacity: 0, y: 20}}
-                                    animate={{opacity: hovered ? 1 : 0, y: hovered ? 0 : 20}}
-                                    transition={{duration: 0.2}}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 20 }}
+                                    transition={{ duration: 0.2 }}
+                                    style={{
+                                        textAlign: "center",
+                                        marginBottom: 4
+                                    }}
                                 >
-                                    <Text style={{color: "#FF69B4"}}>
+                                    <Text style={{ color: "#FF69B4" }}>
                                         {item.url}
                                     </Text>
                                 </motion.div>
-                                <div ref={ref}>
+                                <div>
                                     <Button
                                         fullWidth={isMobile}
                                         style={{
