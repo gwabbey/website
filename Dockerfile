@@ -1,10 +1,13 @@
-FROM oven/bun:1
+FROM node:20-alpine
 WORKDIR /app
 
-COPY package.json bun.lockb ./
-RUN bun install --frozen-lockfile
+COPY package.json pnpm-lock.yaml ./
+RUN npm install -g pnpm
+RUN pnpm install --frozen-lockfile
 
 COPY . .
-RUN bun run build
+RUN pnpm run build
 
-CMD ["bun", "run", "start"]
+ENV PORT=3000
+
+CMD ["pnpm", "run", "start"]
