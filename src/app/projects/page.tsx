@@ -5,6 +5,13 @@ import Transition from "@/components/Transition";
 
 const items = [
     {
+        title: "Coincidenza",
+        description:
+            "A smart trip planner to travel easily in Northern Italy.",
+        image: "/coincidenza.webp",
+        url: "coincidenza.it",
+    },
+    {
         title: "Gestione Move",
         description:
             "An ERP system for Move Automation Srl, a company that provides automation solutions for industries.",
@@ -19,12 +26,6 @@ const items = [
         url: "github.com/grace-js/grace",
     },
     {
-        title: "scuola.bar",
-        description: "An easier way to order food and drinks at school.",
-        image: "/scuolabar.webp",
-        url: "scuola.bar",
-    },
-    {
         title: "Stivor ETS",
         description:
             "A website for a non-profit organization of Italians in Bosnia.",
@@ -32,7 +33,7 @@ const items = [
         url: "stivor.net",
     },
     {
-        title: "Private and school projects",
+        title: "More projects",
         description:
             "I've worked on some projects for other companies or school purposes. You can find them on my GitHub profile.",
         image: "/github.webp",
